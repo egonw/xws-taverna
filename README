@@ -1,3 +1,23 @@
 XWS-Taverna
+-----------
 
 Project for development of a Taverna2 plugin to be able to use XWS (XMPP IO-DATA) cloud services.
+
+Setting Up Taverna2
+-------------------
+
+Get the source code. For each module listed below do [0]:
+
+cvs -d :pserver:anonymous@taverna.cvs.sourceforge.net:/cvsroot/tavernaco ${module}
+cd ${module}
+mvn clean install
+
+The modules you need:
+
+utils/raven-parent
+utils/lang
+
+
+References
+
+0.http://sourceforge.net/mailarchive/message.php?msg_name=a20e6fb10811140507w203ec8e1nac93e76369bf5792%40mail.gmail.com
