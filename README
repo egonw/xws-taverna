@@ -8,7 +8,7 @@ Setting Up Taverna2
 
 Get the source code. For each module listed below do [0]:
 
-cvs -d :pserver:anonymous@taverna.cvs.sourceforge.net:/cvsroot/tavernaco ${module}
+cvs -d :pserver:anonymous@taverna.cvs.sourceforge.net:/cvsroot/taverna co ${module}
 cd ${module}
 mvn clean install
 
