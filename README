@@ -16,7 +16,24 @@ The modules you need:
 
 utils/raven-parent
 utils/lang
+utils/spi-discovery-api
+t2platform-testhelpers
+t2platform
+t2reference-testhelpers
+t2reference
+t2core
+t2reference-ui
+martservice
+wsdl-generic
+security-profiles
+credential-manager
+t2security-agents
+t2workbench
+taverna1.0
+t2activities
+t2integration-testing
 
+However, it current fails for me, and emailed the taverna-hackers mailing list about this...
 
 References
 
