@@ -21,4 +21,11 @@
 		<name>LGPL</name>
 	</license>
   </licenses>
+  <dependencies>
+    <dependency>
+      <groupId>jso</groupId>
+      <artifactId>jso</artifactId>
+      <version>0.12.5</version>
+    </dependency>
+  </dependencies>
 </project>
