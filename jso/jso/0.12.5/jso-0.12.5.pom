@@ -1,0 +1,24 @@
+<project>
+
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>jso</groupId>
+  <artifactId>jso</artifactId>
+  <name>jso</name>
+  <version>0.12.5</version>
+  <url>http://www.example.com/</url>
+  <ciManagement>
+    <notifiers>
+      <notifier>
+        <configuration>
+          <address>egonw@users.sf.net</address>
+        </configuration>
+      </notifier>
+    </notifiers>
+  </ciManagement>
+  <inceptionYear>2009</inceptionYear>
+  <licenses>
+	<license>
+		<name>LGPL</name>
+	</license>
+  </licenses>
+</project>

@@ -28,6 +28,16 @@
 			<version>${t2.activities.version}</version>
 			<scope>test</scope>
 		</dependency>
+                <dependency>
+                        <groupId>jso</groupId>
+                        <artifactId>jso</artifactId>
+                        <version>0.12.5</version>
+                </dependency>
+                <dependency>
+                        <groupId>xws4j</groupId>
+                        <artifactId>xws4j</artifactId>
+                        <version>0.0.20090117</version>
+                </dependency>
 		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>

@@ -26,6 +26,10 @@ import java.util.Map;
 
 import org.apache.log4j.Logger;
 
+import net.bioclipse.xws.client.Client;
+import net.bioclipse.xws.client.IExecutionPipe;
+import net.bioclipse.xws.exceptions.XmppException;
+
 import net.sf.taverna.t2.annotation.annotationbeans.MimeType;
 import net.sf.taverna.t2.reference.ReferenceService;
 import net.sf.taverna.t2.reference.ReferenceServiceException;
@@ -50,15 +54,12 @@ public class XMPPActivity extends AbstractAsynchronousActivity<XMPPConfiguration
 
 	private static final Logger logger = Logger.getLogger(XMPPActivity.class);
 			
-	private String value;
-	
 	private XMPPConfigurationBean config=null;
 	
 	@Override
 	public void configure(XMPPConfigurationBean conf)
 			throws ActivityConfigurationException {
 		this.config=conf;
-		this.value = conf.getServiceJID();
 		if (inputPorts.size() == 0) {
 			addInput("iodata-in", 0, true, null, String.class);
 		}
@@ -68,7 +69,7 @@ public class XMPPActivity extends AbstractAsynchronousActivity<XMPPConfiguration
 	}
 
 	public String getStringValue() {
-		return value;
+		return "XMPP Service: " + config.getServiceJID();
 	}
 	
 	@Override
@@ -89,6 +90,23 @@ public class XMPPActivity extends AbstractAsynchronousActivity<XMPPConfiguration
 							.get("iodata-in"), inputPort
 							.getTranslatedElementClass(), callback
 							.getContext()); // should be a String
+
+					// make XMPP connection (FIXME: should reuse the connection, I guess)
+					IExecutionPipe epipe = new IExecutionPipe() {
+			            public void exec(Runnable r) {
+			                r.run();
+			            }
+			        };
+
+			        Client client = new Client(
+			        	config.getClientJID(),
+			        	config.getPassword(),
+			        	config.getHost(),
+			        	Integer.valueOf(config.getPort()),
+			        	epipe
+			        );
+			        client.connect();
+					
 					Map<String,T2Reference> outputData = new HashMap<String, T2Reference>();
 					T2Reference id = referenceService.register(
 					    "Keys: " + input,
@@ -96,6 +114,8 @@ public class XMPPActivity extends AbstractAsynchronousActivity<XMPPConfiguration
 					);
 					outputData.put("iodata-out", id);
 					callback.receiveResult(outputData, new int[0]);
+				} catch (XmppException e) {
+					callback.fail(e.getMessage(),e);
 				} catch (ReferenceServiceException e) {
 					callback.fail(e.getMessage(),e);
 				}

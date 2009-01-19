@@ -1,0 +1,24 @@
+<project>
+
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>xwsj4</groupId>
+  <artifactId>xws4j</artifactId>
+  <name>xws4j</name>
+  <version>0.0.20090117</version>
+  <url>http://xws4j.sf.net/</url>
+  <ciManagement>
+    <notifiers>
+      <notifier>
+        <configuration>
+          <address>egonw@users.sf.net</address>
+        </configuration>
+      </notifier>
+    </notifiers>
+  </ciManagement>
+  <inceptionYear>2009</inceptionYear>
+  <licenses>
+	<license>
+		<name>LGPL</name>
+	</license>
+  </licenses>
+</project>
