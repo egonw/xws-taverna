@@ -35,6 +35,7 @@ import net.sf.taverna.t2.workflowmodel.EditsRegistry;
 import net.sf.taverna.t2.workflowmodel.OutputPort;
 import net.sf.taverna.t2.workflowmodel.processor.activity.AbstractAsynchronousActivity;
 import net.sf.taverna.t2.workflowmodel.processor.activity.ActivityConfigurationException;
+import net.sf.taverna.t2.workflowmodel.processor.activity.ActivityInputPort;
 import net.sf.taverna.t2.workflowmodel.processor.activity.AsynchronousActivityCallback;
 
 /**
@@ -83,8 +84,16 @@ public class XMPPActivity extends AbstractAsynchronousActivity<XMPPConfiguration
 			public void run() {
 				ReferenceService referenceService = callback.getContext().getReferenceService();
 				try {
-					T2Reference id = referenceService.register(value, 0, true, callback.getContext());
+					ActivityInputPort inputPort = getInputPort("iodata-in");
+					Object input = referenceService.renderIdentifier(data
+							.get("iodata-in"), inputPort
+							.getTranslatedElementClass(), callback
+							.getContext()); // should be a String
 					Map<String,T2Reference> outputData = new HashMap<String, T2Reference>();
+					T2Reference id = referenceService.register(
+					    "Keys: " + input,
+					    0, true, callback.getContext()
+					);
 					outputData.put("iodata-out", id);
 					callback.receiveResult(outputData, new int[0]);
 				} catch (ReferenceServiceException e) {
@@ -94,6 +103,15 @@ public class XMPPActivity extends AbstractAsynchronousActivity<XMPPConfiguration
 			
 		});
 		
+	}
+
+	public ActivityInputPort getInputPort(String name) {
+		for (ActivityInputPort port : getInputPorts()) {
+			if (port.getName().equals(name)) {
+				return port;
+			}
+		}
+		return null;
 	}
 
 	protected void addOutput(String portName, int portDepth, String type) {
