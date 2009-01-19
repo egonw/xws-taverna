@@ -23,11 +23,11 @@ package net.sf.taverna.t2.activities.xmpp;
 
 public class XMPPConfigurationBean {
 
-	private String clientJID; // e.g. egonw@ws1.bmc.uu.se/home
-	private String password;  // e.g. SECRET
-	private String host;      // e.g. ws1.bmc.uu.se
-	private String port;      // e.g. 5222
-	private String serviceJID;// e.g. cdk.ws1.bmc.uu.se
+	private String clientJID = "edit me!"; // e.g. egonw@ws1.bmc.uu.se/home
+	private String password = "edit me!";  // e.g. SECRET
+	private String host = "edit me!";      // e.g. ws1.bmc.uu.se
+	private String port = "edit me!";      // e.g. 5222
+	private String serviceJID = "edit me!";// e.g. cdk.ws1.bmc.uu.se
 
 	public String getClientJID() {
 		return clientJID;
@@ -58,7 +58,7 @@ public class XMPPConfigurationBean {
 	}
 	
 	public String getServiceJID() {
-		return service;
+		return serviceJID;
 	}
 	public void setServiceJID(String value) {
 		serviceJID = value;

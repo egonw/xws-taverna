@@ -32,12 +32,40 @@ public class XMPPActivityHealthChecker implements HealthChecker<XMPPActivity> {
 	}
 
 	public HealthReport checkHealth(XMPPActivity activity) {
-		String value = activity.getConfiguration().getValue();
+		String value = activity.getConfiguration().getClientJID();
 		if (value==null) {
-			return new HealthReport("XMPP Activity","The value is null",Status.SEVERE);
+			return new HealthReport("XMPP Activity","The clientJID is null",Status.SEVERE);
 		}
 		if ("edit me!".equals(value)) {
-			return new HealthReport("XMPP Activity","The value is still the default",Status.WARNING);
+			return new HealthReport("XMPP Activity","The clientJID is still the default",Status.WARNING);
+		}
+		value = activity.getConfiguration().getPassword();
+		if (value==null) {
+			return new HealthReport("XMPP Activity","The password is null",Status.SEVERE);
+		}
+		if ("edit me!".equals(value)) {
+			return new HealthReport("XMPP Activity","The password is still the default",Status.WARNING);
+		}
+		value = activity.getConfiguration().getHost();
+		if (value==null) {
+			return new HealthReport("XMPP Activity","The host is null",Status.SEVERE);
+		}
+		if ("edit me!".equals(value)) {
+			return new HealthReport("XMPP Activity","The host is still the default",Status.WARNING);
+		}
+		value = activity.getConfiguration().getPort();
+		if (value==null) {
+			return new HealthReport("XMPP Activity","The port is null",Status.SEVERE);
+		}
+		if ("edit me!".equals(value)) {
+			return new HealthReport("XMPP Activity","The port is still the default",Status.WARNING);
+		}
+		value = activity.getConfiguration().getServiceJID();
+		if (value==null) {
+			return new HealthReport("XMPP Activity","The serviceJID is null",Status.SEVERE);
+		}
+		if ("edit me!".equals(value)) {
+			return new HealthReport("XMPP Activity","The serviceJID is still the default",Status.WARNING);
 		}
 		return new HealthReport("XMPP Activity","OK",Status.OK);
 	}

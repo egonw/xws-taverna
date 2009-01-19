@@ -58,8 +58,11 @@ public class XMPPActivity extends AbstractAsynchronousActivity<XMPPConfiguration
 			throws ActivityConfigurationException {
 		this.config=conf;
 		this.value = conf.getServiceJID();
+		if (inputPorts.size() == 0) {
+			addInput("iodata-in", 0, true, null, String.class);
+		}
 		if (outputPorts.size() == 0) {
-			addOutput("iodata-out", 0, "text/plain");
+			addOutput("iodata-out", 0, "text/xml");
 		}
 	}
 
@@ -82,7 +85,7 @@ public class XMPPActivity extends AbstractAsynchronousActivity<XMPPConfiguration
 				try {
 					T2Reference id = referenceService.register(value, 0, true, callback.getContext());
 					Map<String,T2Reference> outputData = new HashMap<String, T2Reference>();
-					outputData.put("value", id);
+					outputData.put("iodata-out", id);
 					callback.receiveResult(outputData, new int[0]);
 				} catch (ReferenceServiceException e) {
 					callback.fail(e.getMessage(),e);
