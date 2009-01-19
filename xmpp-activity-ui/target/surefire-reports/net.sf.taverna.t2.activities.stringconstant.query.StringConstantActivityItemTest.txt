@@ -1,4 +1,0 @@
--------------------------------------------------------------------------------
-Test set: net.sf.taverna.t2.activities.stringconstant.query.StringConstantActivityItemTest
--------------------------------------------------------------------------------
-Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.051 sec
