@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<artifactId>parent</artifactId>
+		<groupId>net.sf.taverna</groupId>
+		<version>0.1.2008-11-03</version>
+	</parent>
+
+	<groupId>net.sf.taverna.t2</groupId>
+	<artifactId>xmpp-activity</artifactId>
+	<version>0.4</version>
+	<packaging>pom</packaging>
+
+	<name>Taverna 2 XMPP Activity</name>
+	<description>
+		The Taverna 2 XMPP Activity.
+	</description>
+
+	<properties>
+		<t2.platform.version>0.2</t2.platform.version>
+		<t2.reference.version>0.2</t2.reference.version>
+		
+		<t2.core.version>0.4</t2.core.version>
+		
+		<t2.workbench.version>0.2</t2.workbench.version>
+		<t2.workbench.perspective.version>1.9</t2.workbench.perspective.version>
+		
+		<t2.ui.version>0.4</t2.ui.version>
+		<t2.io.version>0.4</t2.io.version>
+		<t2.observer.version>0.4</t2.observer.version>
+		<t2.partition.version>0.4</t2.partition.version>
+		<t2.spidiscovery.version>0.4</t2.spidiscovery.version>
+		
+		<raven.version>1.9</raven.version>
+		<t2.security.version>0.2</t2.security.version>
+
+		<taverna.version>1.7.2.0</taverna.version>
+
+		<t2.activities.version>0.4</t2.activities.version>
+	</properties>
+
+	<modules>
+
+		<!-- module>archetypes</module>
+		<module>activity-test-utils</module>
+		<module>dependency-activity</module>
+		<module>apiconsumer-activity</module>
+		<module>apiconsumer-activity-translator</module>
+		<module>apiconsumer-activity-ui</module>
+		<module>beanshell-activity</module>
+		<module>beanshell-activity-translator</module>
+		<module>beanshell-activity-ui</module>
+		<module>biomart-activity</module>
+		<module>biomart-activity-ui</module>
+		<module>biomart-activity-translator</module>
+		<module>biomoby-activity</module>
+		<module>biomoby-activity-ui</module>
+		<module>biomoby-activity-translator</module>
+		<module>dataflow-activity</module>
+		<module>dataflow-activity-ui</module>
+		<module>dataflow-activity-translator</module>
+		<module>localworker-activity</module>
+		<module>localworker-translator</module>
+		<module>localworker-activity-ui</module>
+		<module>rshell-activity</module>
+		<module>rshell-activity-translator</module>
+		<module>rshell-activity-ui</module>
+		<module>soaplab-activity</module>
+		<module>soaplab-activity-translator</module>
+		<module>soaplab-activity-ui</module>
+		<module>stringconstant-activity</module>
+		<module>stringconstant-activity-translator</module>
+		<module>stringconstant-activity-ui</module>
+		<module>wsdl-activity</module>
+		<module>wsdl-activity-translator</module>
+		<module>wsdl-activity-ui</module -->
+		<module>xmpp-activity</module>
+		<module>xmpp-activity-ui</module>
+		<!-- module>ncbi-activity-ui</module>
+		<module>all-activities</module>
+		<module>all-activity-translators</module>
+		<module>all-activity-uis</module -->
+	</modules>
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-clover-plugin</artifactId>
+				<configuration>
+					<jdk>1.5</jdk>
+					<targetPercentage>50%</targetPercentage>
+					<failOnViolation>false</failOnViolation>
+				</configuration>
+				<executions>
+					<execution>
+						<phase>pre-site</phase>
+						<goals>
+							<goal>instrument</goal>
+							<goal>aggregate</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
+	</build>
+	<reporting>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-clover-plugin</artifactId>
+				<configuration>
+					<generatePdf>true</generatePdf>
+					<generateXml>true</generateXml>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-javadoc-plugin</artifactId>
+				<configuration>
+					<minmemory>128m</minmemory>
+					<maxmemory>512</maxmemory>
+				</configuration>
+			</plugin>
+			<plugin>
+				<artifactId>maven-surefire-plugin</artifactId>
+			</plugin>
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>jxr-maven-plugin</artifactId>
+			</plugin>
+		</plugins>
+	</reporting>
+	<repositories>
+		<repository>
+			<releases />
+			<snapshots>
+				<enabled>false</enabled>
+			</snapshots>
+			<id>mygrid-repository</id>
+			<name>myGrid Repository</name>
+			<url>http://www.mygrid.org.uk/maven/repository</url>
+		</repository>
+		<repository>
+			<releases>
+				<enabled>false</enabled>
+			</releases>
+			<snapshots />
+			<id>mygrid-snapshot-repository</id>
+			<name>myGrid Snapshot Repository</name>
+			<url>
+				http://www.mygrid.org.uk/maven/snapshot-repository
+			</url>
+		</repository>
+		<repository>
+			<id>mobycentral</id>
+			<name>MobyCentral Repository</name>
+			<url>http://moby.ucalgary.ca/moby_maven/</url>
+			<snapshots>
+				<enabled>false</enabled>
+			</snapshots>
+			<releases>
+				<enabled>true</enabled>
+			</releases>
+		</repository>
+		    <repository>
+        <id>biomoby</id>
+        <name>Biomoby.org Repository</name>
+        <url>http://biomoby.org/m2repo/</url>
+        <snapshots>
+            <enabled>false</enabled>
+        </snapshots>
+        <releases>
+            <enabled>true</enabled>
+        </releases>
+    </repository>
+        <repository>
+            <id>jboss</id>
+            <name>JBoss repository</name>
+            <url>http://repository.jboss.org/maven2/</url>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+        </repository>
+        <repository>
+            <id>javanet</id>
+            <name>java.net</name>
+            <url>http://download.java.net/maven/2/</url>
+        </repository>
+	</repositories>
+	<dependencyManagement>
+	<dependencies>
+			<dependency>
+			<groupId>uk.org.mygrid.taverna.scufl</groupId>
+			<artifactId>scufl-model</artifactId>
+			<version>${taverna.version}</version>
+			<exclusions>
+				<exclusion>
+					<groupId>uk.org.mygrid.taverna.raven
+					</groupId>
+					<artifactId>raven</artifactId>
+				</exclusion>
+				<exclusion>
+					<groupId>uk.org.mygrid.taverna.raven
+					</groupId>
+					<artifactId>raven-log4j</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>	
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>4.4</version>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>javax.help</groupId>
+			<artifactId>javahelp</artifactId>
+			<version>2.0.02</version>
+		</dependency>
+		<dependency>
+            <groupId>log4j</groupId>
+            <artifactId>log4j</artifactId>
+            <version>1.2.13</version>
+        </dependency>
+     		<dependency>
+			<groupId>commons-io</groupId>
+			<artifactId>commons-io</artifactId>
+			<version>1.3.1</version>
+		</dependency>
+       		<dependency>
+			<groupId>commons-codec</groupId>
+			<artifactId>commons-codec</artifactId>
+			<version>1.3</version>
+		</dependency>
+		<dependency>
+			<groupId>javax.mail</groupId>
+			<artifactId>mail</artifactId>
+			<version>1.4</version>
+		</dependency>
+		<dependency>
+			<groupId>jdom</groupId>
+			<artifactId>jdom</artifactId>
+			<version>1.0</version>
+		</dependency>
+	</dependencies>
+	</dependencyManagement>
+</project>
+
