@@ -1,7 +1,17 @@
 XWS-Taverna
 -----------
 
-Project for development of a Taverna2 plugin to be able to use XWS (XMPP IO-DATA) cloud services.
+Project for development of a Taverna2 plugin to be able to use XWS (XMPP IO-DATA) cloud services [0].
+
+Requirements
+------------
+
+Install the Maven2 Eclipse plugins from this update site [1]:
+
+http://m2eclipse.sonatype.org/update/
+
+Install
+-------
 
 To compile the xmpp-activity and xmpp-activity-ui:
 
@@ -10,3 +20,4 @@ mvn clean install
 References
 
 0.http://sourceforge.net/mailarchive/message.php?msg_name=a20e6fb10811140507w203ec8e1nac93e76369bf5792%40mail.gmail.com
+1.http://docs.codehaus.org/display/MAVENUSER/Eclipse+Integration
