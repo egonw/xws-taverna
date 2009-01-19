@@ -8,9 +8,9 @@
 		<version>0.1.2008-11-03</version>
 	</parent>
 
-	<groupId>net.sf.taverna.t2</groupId>
+	<groupId>com.github.xwstaverna</groupId>
 	<artifactId>activities</artifactId>
-	<version>0.4</version>
+	<version>0.1</version>
 	<packaging>pom</packaging>
 
 	<name>Taverna 2 XMPP Activity</name>
@@ -67,6 +67,8 @@
 			</plugin>
 		</plugins>
 	</build>
+	<pluginRepositories>
+	</pluginRepositories>
 	<reporting>
 		<plugins>
 			<plugin>

@@ -44,7 +44,7 @@ public class XMPPActivityConfigurationAction extends
 	public void actionPerformed(ActionEvent e) {
 		XMPPConfigurationBean bean = new XMPPConfigurationBean();
 		String value = getActivity().getConfiguration().getValue();
-		String newValue = JOptionPane.showInputDialog(owner,"Enter string value",value);
+		String newValue = JOptionPane.showInputDialog(owner,"Enter XXXXX value",value);
 		if (newValue!=null) {
 			bean.setValue(newValue);
 			configureActivity(bean);

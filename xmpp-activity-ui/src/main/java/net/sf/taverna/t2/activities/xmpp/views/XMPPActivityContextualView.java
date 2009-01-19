@@ -33,7 +33,7 @@ import net.sf.taverna.t2.workflowmodel.processor.activity.Activity;
 
 public class XMPPActivityContextualView extends HTMLBasedActivityContextualView<XMPPConfigurationBean> {
 
-	private static final long serialVersionUID = -553974544001808511L;
+	private static final long serialVersionUID = -553974533001808511L;
 
 	public XMPPActivityContextualView(Activity<?> activity) {
 		super(activity);
@@ -41,13 +41,13 @@ public class XMPPActivityContextualView extends HTMLBasedActivityContextualView<
 
 	@Override
 	protected String getViewTitle() {
-		return "XMPP Cloud Service activity";
+		return "XMPP Activity";
 	}
 
 
 	@Override
 	protected String getRawTableRowsHtml() {
-		String html = "<tr><td>Value</td><td>"+getConfigBean().getValue()+"</td></tr>";
+		String html = "<tr><td>XXXXXX</td><td>"+getConfigBean().getValue()+"</td></tr>";
 		return html;
 	}
 

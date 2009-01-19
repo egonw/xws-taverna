@@ -25,8 +25,8 @@ and tune the repository location to match your platform, etc:
 
         <plugin>
                 <provider>taverna.sf.net</provider>
-                <identifier>net.sf.taverna.t2.xmpp-activities</identifier>
-                <version>0.4</version>
+                <identifier>com.github.xwstaverna.xmpp-activities</identifier>
+                <version>0.1</version>
                 <name>xmpp-activities</name>
                 <description>Taverna 2 XMPP activities</description>
                 <enabled>true</enabled>
@@ -35,14 +35,14 @@ and tune the repository location to match your platform, etc:
                 </repositories>
                 <profile>
                         <dependency>
-                                <groupId>net.sf.taverna.t2.activities</groupId>
+                                <groupId>com.github.xwstaverna.activities</groupId>
                                 <artifactId>xmpp-activity</artifactId>
-                                <version>0.4</version>
+                                <version>0.1</version>
                         </dependency>
                         <dependency>
-                                <groupId>net.sf.taverna.t2.activities</groupId>
+                                <groupId>com.github.xwstaverna.activities</groupId>
                                 <artifactId>xmpp-activity-ui</artifactId>
-                                <version>0.4</version>
+                                <version>0.1</version>
                         </dependency>
                 </profile>
         </plugin>

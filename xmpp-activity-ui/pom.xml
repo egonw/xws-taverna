@@ -4,11 +4,11 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	<parent>
 		<artifactId>activities</artifactId>
-		<groupId>net.sf.taverna.t2</groupId>
-		<version>0.4</version>
+		<groupId>com.github.xwstaverna</groupId>
+		<version>0.1</version>
 	</parent>
 	<modelVersion>4.0.0</modelVersion>
-	<groupId>net.sf.taverna.t2.activities</groupId>
+	<groupId>com.github.xwstaverna.activities</groupId>
 	<artifactId>xmpp-activity-ui</artifactId>
 	<name>Taverna 2 XMPP Activity UI</name>
 	<dependencies>
