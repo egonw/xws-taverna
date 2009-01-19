@@ -13,11 +13,42 @@ http://m2eclipse.sonatype.org/update/
 Install
 -------
 
+Use git to get this project on your local disk. It is derived from t2activities, tag 
+'t2activities-0-4'.
+
 To compile the xmpp-activity and xmpp-activity-ui:
 
 mvn clean install
 
+Then, you need to tune the taverna-workbench-2-0/plugins/plugins.xml to include the following snippet,
+and tune the repository location to match your platform, etc:
+
+        <plugin>
+                <provider>taverna.sf.net</provider>
+                <identifier>net.sf.taverna.t2.xmpp-activities</identifier>
+                <version>0.4</version>
+                <name>xmpp-activities</name>
+                <description>Taverna 2 XMPP activities</description>
+                <enabled>true</enabled>
+                <repositories>
+                        <repository>file:///home/egonw/.m2/repository</repository>
+                </repositories>
+                <profile>
+                        <dependency>
+                                <groupId>net.sf.taverna.t2.activities</groupId>
+                                <artifactId>xmpp-activity</artifactId>
+                                <version>0.4</version>
+                        </dependency>
+                        <dependency>
+                                <groupId>net.sf.taverna.t2.activities</groupId>
+                                <artifactId>xmpp-activity-ui</artifactId>
+                                <version>0.4</version>
+                        </dependency>
+                </profile>
+        </plugin>
+
 References
+----------
 
 0.http://sourceforge.net/mailarchive/message.php?msg_name=a20e6fb10811140507w203ec8e1nac93e76369bf5792%40mail.gmail.com
 1.http://docs.codehaus.org/display/MAVENUSER/Eclipse+Integration
