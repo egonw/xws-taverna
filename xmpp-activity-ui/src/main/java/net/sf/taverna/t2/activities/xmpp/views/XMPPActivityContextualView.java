@@ -50,7 +50,8 @@ public class XMPPActivityContextualView extends HTMLBasedActivityContextualView<
 		  "<tr><td>Client JID password</td><td>"+getConfigBean().getPassword()+"</td></tr>" +
 		  "<tr><td>Jabber host</td><td>"+getConfigBean().getHost()+"</td></tr>" +
 		  "<tr><td>Jabber host port</td><td>"+getConfigBean().getPort()+"</td></tr>" +
-		  "<tr><td>Service JID</td><td>"+getConfigBean().getServiceJID()+"</td></tr>" +;
+		  "<tr><td>Service JID</td><td>"+getConfigBean().getServiceJID()+"</td></tr>" +
+		  "<tr><td>Service Function</td><td>"+getConfigBean().getFunction()+"</td></tr>";
 		return html;
 	}
 

@@ -68,6 +68,11 @@ public class XMPPActivityConfigurationAction extends
 		if (newValue!=null) {
 			bean.setServiceJID(newValue);
 		}
+		value = getActivity().getConfiguration().getFunction();
+		newValue = JOptionPane.showInputDialog(owner,"Enter Service Function",value);
+		if (newValue!=null) {
+			bean.setFunction(newValue);
+		}
 		configureActivity(bean);
 	}
 

@@ -28,6 +28,7 @@ public class XMPPConfigurationBean {
 	private String host = "edit me!";      // e.g. ws1.bmc.uu.se
 	private String port = "edit me!";      // e.g. 5222
 	private String serviceJID = "edit me!";// e.g. cdk.ws1.bmc.uu.se
+	private String function = "edit me!";  // e.g. calculateMass
 
 	public String getClientJID() {
 		return clientJID;
@@ -62,6 +63,13 @@ public class XMPPConfigurationBean {
 	}
 	public void setServiceJID(String value) {
 		serviceJID = value;
+	}
+	
+	public String getFunction() {
+		return function;
+	}
+	public void setFunction(String value) {
+		function = value;
 	}
 	
 }

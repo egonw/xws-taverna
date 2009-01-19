@@ -54,6 +54,7 @@ public class XMPPActivityItem extends AbstractActivityItem {
 		configbean.setServiceJID("the service JID");
 		configbean.setHost("your Jabber host");
 		configbean.setPort("your Jabber host port");
+		configbean.setFunction("your service function");
 		return configbean;
 		
 	}
