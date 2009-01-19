@@ -26,9 +26,16 @@ import java.util.Map;
 
 import org.apache.log4j.Logger;
 
+import net.bioclipse.xws.JavaDOMTools;
 import net.bioclipse.xws.client.Client;
 import net.bioclipse.xws.client.IExecutionPipe;
+import net.bioclipse.xws.client.IXmppItem;
+import net.bioclipse.xws.client.adhoc.IFunction;
+import net.bioclipse.xws.client.adhoc.IProcess;
+import net.bioclipse.xws.client.adhoc.IService;
+import net.bioclipse.xws.client.listeners.ISimpleProcessListener;
 import net.bioclipse.xws.exceptions.XmppException;
+import net.bioclipse.xws.exceptions.XwsException;
 
 import net.sf.taverna.t2.annotation.annotationbeans.MimeType;
 import net.sf.taverna.t2.reference.ReferenceService;
@@ -41,6 +48,8 @@ import net.sf.taverna.t2.workflowmodel.processor.activity.AbstractAsynchronousAc
 import net.sf.taverna.t2.workflowmodel.processor.activity.ActivityConfigurationException;
 import net.sf.taverna.t2.workflowmodel.processor.activity.ActivityInputPort;
 import net.sf.taverna.t2.workflowmodel.processor.activity.AsynchronousActivityCallback;
+
+import org.w3c.dom.Element;
 
 /**
  * <p>
@@ -106,15 +115,22 @@ public class XMPPActivity extends AbstractAsynchronousActivity<XMPPConfiguration
 			        	epipe
 			        );
 			        client.connect();
+			        IService service = getService(client, config.getServiceJID());
+			        IFunction dummyFunction = service.getFunction(config.getFunction());
+		            Element result = dummyFunction.invokeSync("" + input, 45000);
 					
 					Map<String,T2Reference> outputData = new HashMap<String, T2Reference>();
 					T2Reference id = referenceService.register(
-					    "Keys: " + input,
+					    JavaDOMTools.w3cElementToString(result),
 					    0, true, callback.getContext()
 					);
 					outputData.put("iodata-out", id);
 					callback.receiveResult(outputData, new int[0]);
 				} catch (XmppException e) {
+					callback.fail(e.getMessage(),e);
+				} catch (XwsException e) {
+					callback.fail(e.getMessage(),e);
+				} catch (InterruptedException e) {
 					callback.fail(e.getMessage(),e);
 				} catch (ReferenceServiceException e) {
 					callback.fail(e.getMessage(),e);
@@ -125,6 +141,18 @@ public class XMPPActivity extends AbstractAsynchronousActivity<XMPPConfiguration
 		
 	}
 
+    private IService getService(Client client, String serviceJID)
+    throws XmppException, XwsException, InterruptedException {
+        IXmppItem item = client.getXmppItem(serviceJID, "");
+        item = item.discoverSync(30000);
+
+        if (item instanceof IService) {
+            return (IService)item;
+        } else {
+            return null;
+        }
+    }
+	
 	public ActivityInputPort getInputPort(String name) {
 		for (ActivityInputPort port : getInputPorts()) {
 			if (port.getName().equals(name)) {
