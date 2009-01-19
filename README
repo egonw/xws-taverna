@@ -3,22 +3,9 @@ XWS-Taverna
 
 Project for development of a Taverna2 plugin to be able to use XWS (XMPP IO-DATA) cloud services.
 
-Setting Up Taverna2
--------------------
+To compile the xmpp-activity and xmpp-activity-ui:
 
-Get the source code. For each module listed below do [0]:
-
-cvs -d :pserver:anonymous@taverna.cvs.sourceforge.net:/cvsroot/taverna co ${module}
-cd ${module}
 mvn clean install
-
-The modules you need:
-
-t2activities
-
-Then, copy in the xmpp-activity and xmpp-activity-ui from this location into the t2activities folder,
-and add the two components to t2activities/pom.xml (possible commenting out many activities you are not
-interested in, to speed up compiling).
 
 References
 
