@@ -33,17 +33,8 @@ import net.sf.taverna.t2.workflowmodel.AbstractPort;
 
 import org.junit.Test;
 
-/**
- * Tests the StringConstantActivity
- * @author Stuart Owen
- *
- */
 public class XMPPActivityTest {
 
-	/**
-	 * Simple invocation test. Also tests Activity.configure sets up the correct output port.
-	 * @throws Exception
-	 */
 	@Test
 	public void testInvoke() throws Exception {
 		XMPPConfigurationBean bean = new XMPPConfigurationBean();
