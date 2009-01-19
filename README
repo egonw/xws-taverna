@@ -3,6 +3,10 @@ XWS-Taverna
 
 Project for development of a Taverna2 plugin to be able to use XWS (XMPP IO-DATA) cloud services [0].
 
+A demo workflow as available at:
+
+http://www.myexperiment.org/workflows/631
+
 Requirements
 ------------
 
