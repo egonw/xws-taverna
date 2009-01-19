@@ -14,26 +14,11 @@ mvn clean install
 
 The modules you need:
 
-utils/raven-parent
-utils/lang
-utils/spi-discovery-api
-t2platform-testhelpers
-t2platform
-t2reference-testhelpers
-t2reference
-t2core
-t2reference-ui
-martservice
-wsdl-generic
-security-profiles
-credential-manager
-t2security-agents
-t2workbench
-taverna1.0
 t2activities
-t2integration-testing
 
-However, it current fails for me, and emailed the taverna-hackers mailing list about this...
+Then, copy in the xmpp-activity and xmpp-activity-ui from this location into the t2activities folder,
+and add the two components to t2activities/pom.xml (possible commenting out many activities you are not
+interested in, to speed up compiling).
 
 References
 
