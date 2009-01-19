@@ -42,46 +42,8 @@
 	</properties>
 
 	<modules>
-
-		<!-- module>archetypes</module>
-		<module>activity-test-utils</module>
-		<module>dependency-activity</module>
-		<module>apiconsumer-activity</module>
-		<module>apiconsumer-activity-translator</module>
-		<module>apiconsumer-activity-ui</module>
-		<module>beanshell-activity</module>
-		<module>beanshell-activity-translator</module>
-		<module>beanshell-activity-ui</module>
-		<module>biomart-activity</module>
-		<module>biomart-activity-ui</module>
-		<module>biomart-activity-translator</module>
-		<module>biomoby-activity</module>
-		<module>biomoby-activity-ui</module>
-		<module>biomoby-activity-translator</module>
-		<module>dataflow-activity</module>
-		<module>dataflow-activity-ui</module>
-		<module>dataflow-activity-translator</module>
-		<module>localworker-activity</module>
-		<module>localworker-translator</module>
-		<module>localworker-activity-ui</module>
-		<module>rshell-activity</module>
-		<module>rshell-activity-translator</module>
-		<module>rshell-activity-ui</module>
-		<module>soaplab-activity</module>
-		<module>soaplab-activity-translator</module>
-		<module>soaplab-activity-ui</module>
-		<module>stringconstant-activity</module>
-		<module>stringconstant-activity-translator</module>
-		<module>stringconstant-activity-ui</module>
-		<module>wsdl-activity</module>
-		<module>wsdl-activity-translator</module>
-		<module>wsdl-activity-ui</module -->
 		<module>xmpp-activity</module>
 		<module>xmpp-activity-ui</module>
-		<!-- module>ncbi-activity-ui</module>
-		<module>all-activities</module>
-		<module>all-activity-translators</module>
-		<module>all-activity-uis</module -->
 	</modules>
 	<build>
 		<plugins>
