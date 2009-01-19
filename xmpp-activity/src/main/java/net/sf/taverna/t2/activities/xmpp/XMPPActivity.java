@@ -57,9 +57,9 @@ public class XMPPActivity extends AbstractAsynchronousActivity<XMPPConfiguration
 	public void configure(XMPPConfigurationBean conf)
 			throws ActivityConfigurationException {
 		this.config=conf;
-		this.value=conf.getValue();
+		this.value = conf.getServiceJID();
 		if (outputPorts.size() == 0) {
-			addOutput("value", 0, "text/plain");
+			addOutput("iodata-out", 0, "text/plain");
 		}
 	}
 
