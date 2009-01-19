@@ -49,7 +49,11 @@ public class XMPPActivityItem extends AbstractActivityItem {
 	@Override
 	public Object getConfigBean() {
 		XMPPConfigurationBean configbean = new XMPPConfigurationBean();
-		configbean.setValue("Add your own value here");
+		configbean.setClientJID("your Jabber ID");
+		configbean.setPassword("your Jabber password");
+		configbean.setServiceJID("the service JID");
+		configbean.setHost("your Jabber host");
+		configbean.setPort("your Jabber host port");
 		return configbean;
 		
 	}

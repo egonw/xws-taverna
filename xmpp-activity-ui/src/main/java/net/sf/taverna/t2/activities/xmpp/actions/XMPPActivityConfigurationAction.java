@@ -43,12 +43,32 @@ public class XMPPActivityConfigurationAction extends
 
 	public void actionPerformed(ActionEvent e) {
 		XMPPConfigurationBean bean = new XMPPConfigurationBean();
-		String value = getActivity().getConfiguration().getValue();
-		String newValue = JOptionPane.showInputDialog(owner,"Enter XXXXX value",value);
+		String value = getActivity().getConfiguration().getClientJID();
+		String newValue = JOptionPane.showInputDialog(owner,"Enter Client JID",value);
 		if (newValue!=null) {
-			bean.setValue(newValue);
-			configureActivity(bean);
+			bean.setClientJID(newValue);
 		}
+		value = getActivity().getConfiguration().getPassword();
+		newValue = JOptionPane.showInputDialog(owner,"Enter Client JID password",value);
+		if (newValue!=null) {
+			bean.setPassword(newValue);
+		}
+		value = getActivity().getConfiguration().getHost();
+		newValue = JOptionPane.showInputDialog(owner,"Enter Jabber host",value);
+		if (newValue!=null) {
+			bean.setHost(newValue);
+		}
+		value = getActivity().getConfiguration().getPort();
+		newValue = JOptionPane.showInputDialog(owner,"Enter Jabber host port",value);
+		if (newValue!=null) {
+			bean.setPort(newValue);
+		}
+		value = getActivity().getConfiguration().getServiceJID();
+		newValue = JOptionPane.showInputDialog(owner,"Enter Service JID",value);
+		if (newValue!=null) {
+			bean.setServiceJID(newValue);
+		}
+		configureActivity(bean);
 	}
 
 }

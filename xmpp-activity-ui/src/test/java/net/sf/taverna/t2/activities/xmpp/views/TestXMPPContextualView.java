@@ -42,7 +42,7 @@ public class TestXMPPContextualView {
 	public void setup() throws ActivityConfigurationException {
 		activity=new XMPPActivity();
 		XMPPConfigurationBean b=new XMPPConfigurationBean();
-		b.setValue("elvis");
+		b.setClientJID("elvis");
 		((XMPPActivity)activity).configure(b);
 	}
 	@SuppressWarnings("unchecked")
