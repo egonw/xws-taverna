@@ -23,9 +23,9 @@
 			<version>${t2.workbench.version}</version>
 		</dependency>
 		<dependency>
-			<groupId>net.sf.taverna.t2.activities</groupId>
+			<groupId>com.github.xwstaverna.activities</groupId>
 			<artifactId>xmpp-activity</artifactId>
-			<version>${t2.activities.version}</version>
+			<version>0.1</version>
 		</dependency>
 		<dependency>
 			<groupId>net.sf.taverna.t2.workbench</groupId>
