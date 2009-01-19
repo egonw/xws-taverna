@@ -9,7 +9,7 @@
 	</parent>
 
 	<groupId>net.sf.taverna.t2</groupId>
-	<artifactId>xmpp-activity</artifactId>
+	<artifactId>activities</artifactId>
 	<version>0.4</version>
 	<packaging>pom</packaging>
 
