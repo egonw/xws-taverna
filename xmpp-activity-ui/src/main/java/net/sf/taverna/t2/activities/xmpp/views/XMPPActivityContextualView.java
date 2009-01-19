@@ -44,16 +44,13 @@ public class XMPPActivityContextualView extends HTMLBasedActivityContextualView<
 		return "XMPP Activity";
 	}
 
-
 	@Override
 	protected String getRawTableRowsHtml() {
-		String html = "<tr>" +
-		  "<td>Client JID</td><td>"+getConfigBean().getClientJID()+"</td>" +
-		  "<td>Client JID password</td><td>"+getConfigBean().getPassword()+"</td>" +
-		  "<td>Jabber host</td><td>"+getConfigBean().getHost()+"</td>" +
-		  "<td>Jabber host port</td><td>"+getConfigBean().getPort()+"</td>" +
-		  "<td>Service JID</td><td>"+getConfigBean().getServiceJID()+"</td>" +
-		  "</tr>";
+		String html = "<tr><td>Client JID</td><td>"+getConfigBean().getClientJID()+"</td></tr>" +
+		  "<tr><td>Client JID password</td><td>"+getConfigBean().getPassword()+"</td></tr>" +
+		  "<tr><td>Jabber host</td><td>"+getConfigBean().getHost()+"</td></tr>" +
+		  "<tr><td>Jabber host port</td><td>"+getConfigBean().getPort()+"</td></tr>" +
+		  "<tr><td>Service JID</td><td>"+getConfigBean().getServiceJID()+"</td></tr>" +;
 		return html;
 	}
 
