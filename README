@@ -64,6 +64,17 @@ and tune the repository location to match your platform, etc:
                 </profile>
         </plugin>
 
+Update the repository path in the above snippet to not point to my $HOME, but to yours.
+
+Also copy the jso/ and xws4j/ folders into your local repository, such as
+$HOME/.m2/repository.
+
+Contact
+-------
+
+Jabber: egonw@jabber.org
+IRC: egonw @#cdk@irc.freenode.net
+
 References
 ----------
 
