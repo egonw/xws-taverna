@@ -11,6 +11,15 @@ Or, to see some screenshots:
 
 http://chem-bla-ics.blogspot.com/2009/01/calling-xmpp-cloud-services-from.html
 
+License
+-------
+Copyright (C) 2007 University of Manchester
+              2009 Egon Willighagen
+
+License: LGPL, see COPYRIGHT.
+
+The JSO and XWS4J libraries also found in this git are LGPL too.
+
 Requirements
 ------------
 

@@ -1,0 +1,3 @@
++ use async XMPP calls in the node
++ make a connection when the node if configured
++ use client JID, host, etc info at workflow level, not node
